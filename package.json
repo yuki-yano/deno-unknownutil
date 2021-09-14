@@ -6,13 +6,14 @@
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/yuki-yano/deno-unknownutil",
+  "repository": "https://github.com/yuki-yano/unknownutil",
   "author": "yuki_yano <yuki.ycino@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "npm-run-all clean bundle",
     "bundle": "rollup -c config/rollup.config.js",
-    "clean": "rimraf dist/*"
+    "clean": "rimraf dist/*",
+    "test": "deno test ./*_test.ts"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
