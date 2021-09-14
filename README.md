@@ -1,12 +1,20 @@
 # unknownutil
 
-[![deno land](http://img.shields.io/badge/available%20on-deno.land/x-lightgrey.svg?logo=deno)](https://deno.land/x/unknownutil)
-[![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/unknownutil/mod.ts)
-[![Test](https://github.com/lambdalisue/deno-unknownutil/workflows/Test/badge.svg)](https://github.com/lambdalisue/deno-unknownutil/actions?query=workflow%3ATest)
+## Install
+
+### npm
+
+```sh
+npm install unknownutil
+```
+
+### yarn
+
+```sh
+yarn add unknown util
+```
 
 A utility pack for handling `unknown` type.
-
-[deno]: https://deno.land/
 
 ## Usage
 
@@ -28,7 +36,7 @@ The `unknownutil` provides the following predicate functions
 For example:
 
 ```typescript
-import { isString } from "https://deno.land/x/unknownutil/mod.ts";
+import { isString } from "uknownutil";
 
 const a: unknown = "Hello";
 
@@ -41,7 +49,7 @@ Additionally, `isArray` and `isObject` supports an inner predicate function to
 predicate `x` more precisely like:
 
 ```typescript
-import { isArray, isString } from "https://deno.land/x/unknownutil/mod.ts";
+import { isArray, isString } from "unknownutil";
 
 const a: unknown = ["a", "b", "c"];
 
@@ -57,7 +65,7 @@ if (isArray(a, isString)) {
 Use `isLike` if you need some complicated types like tuple or struct like:
 
 ```typescript
-import { isLike } from "https://deno.land/x/unknownutil/mod.ts";
+import { isLike } from "unknownutil";
 
 const a: unknown = ["a", 0, "b"];
 const b: unknown = ["a", 0, "b", "c"];
@@ -105,7 +113,7 @@ The `unknownutil` provides the following ensure functions which will raise
 For example:
 
 ```typescript
-import { ensureString } from "https://deno.land/x/unknownutil/mod.ts";
+import { ensureString } from "unknownutil";
 
 const a: unknown = "Hello";
 ensureString(a); // Now 'a' is 'string'
@@ -118,7 +126,7 @@ Additionally, `ensureArray` and `ensureObject` supports an inner predicate
 function to predicate `x` more precisely like:
 
 ```typescript
-import { ensureArray, isString } from "https://deno.land/x/unknownutil/mod.ts";
+import { ensureArray, isString } from "unknownutil";
 
 const a: unknown = ["a", "b", "c"];
 ensureArray(a); // Now 'a' is 'unknown[]'
@@ -132,7 +140,7 @@ ensureArray(b, isString); // Raise EnsureError on above while 'b' is not string 
 Use `ensureLike` if you need some complicated types like tuple or struct like:
 
 ```typescript
-import { ensureLike } from "https://deno.land/x/unknownutil/mod.ts";
+import { ensureLike } from "unknownutil";
 
 const a: unknown = ["a", "b", "c"];
 ensureLike([], a); // Now 'a' is 'unknown[]'
